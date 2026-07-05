@@ -3,6 +3,7 @@ const DEFAULT_MINUTES = 25;
 
 const timerCard = document.querySelector(".timer-card");
 const timeDisplay = document.getElementById("time-display");
+const currentTimeDisplay = document.getElementById("current-time");
 const startBtn = document.getElementById("start-btn");
 const stopBtn = document.getElementById("stop-btn");
 const resetBtn = document.getElementById("reset-btn");
@@ -60,4 +61,14 @@ timerCard.addEventListener("click", () => {
   }
 });
 
+function updateCurrentTime() {
+  const now = new Date();
+  const hours = String(now.getHours()).padStart(2, "0");
+  const minutes = String(now.getMinutes()).padStart(2, "0");
+  const seconds = String(now.getSeconds()).padStart(2, "0");
+  currentTimeDisplay.textContent = `${hours}:${minutes}:${seconds}`;
+}
+
 updateDisplay();
+updateCurrentTime();
+setInterval(updateCurrentTime, 1000);

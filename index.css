@@ -83,6 +83,13 @@ h1 {
   letter-spacing: 1px;
 }
 
+.current-time {
+  margin-top: 12px;
+  font-size: 14px;
+  font-variant-numeric: tabular-nums;
+  color: #999;
+}
+
 .time-display {
   margin: 40px 0;
   font-size: 72px;
